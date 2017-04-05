@@ -1,3 +1,199 @@
 // Place all the styles related to the say controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  //background: #B00100;
+  background: url(back.jpeg);
+  font-family: Arial;
+}
+
+
+.cont {
+  background-image: url(IMG_0448.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.32);
+  background-size: 1050px auto ;
+  margin: 17px auto;
+  padding: 5px;
+  border: 10px solid rgba(255, 254, 30, 0.5);
+  width: 1041px; //5290
+  height: 690px; //3527
+  box-shadow: -10px 0 70px #000000;
+}
+
+.side-cont {
+  width: 300px;
+  height: 250px;
+  //border: 2px solid #000000;
+  //float: right;
+  margin: 210px -5px 100px 780px;
+}
+
+.button {
+  font: 23px Сomic Sans MS;
+  width: 250px;
+  height: 50px;
+  background: rgba(255, 208, 168, 0.5);
+  margin: 5px;
+  float: right;
+  color: #2e2e2e;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: -15px 10px 20px rgba(255, 255, 255, 0.85);
+}
+
+.button-back {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  background-color: #c8c8ff;
+}
+
+.button-back:hover {
+  background-color: white;
+
+}
+
+.back-block {
+  margin: auto;
+  width: 100px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: rgba(255, 195, 50, 0.6);
+}
+
+.border {
+  width: 1047px; //5290
+  height: 695px; //3527
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #3c3c3c;
+  border-left: 3px solid #3c3c3c;
+  margin: -5px;
+}
+
+.upperline {
+  margin-left: -300px;
+  margin-top: 20px;
+  width: 1580px;
+  height: 100px;
+  background-color: rgba(247, 247, 247, 0.36);
+}
+
+.birthday_field {
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  border-radius: 10px;
+  width: 388px;
+  height: 70px;
+  background-color: #e6e6e6;
+  padding: 10px 60px 20px 60px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5), inset 5px 5px 20px 5px rgba(255,255,255,1), inset -10px -10px 10px rgba(0,0,0,.6);
+  margin: auto;
+}
+
+
+.inner-container {
+  width: 400px;
+  font: 100% Arial;
+}
+
+
+.inner-shadow {
+
+  padding: 3px;
+}
+
+.inner-shadow2 {
+  display: none;
+  padding: 3px;
+  margin-top: -6px;
+}
+
+
+
+.button-ok {
+  background-color: #c8c8ff;
+  width: 60px;
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+.result-container{
+  text-align: center;
+  max-width: 1000px;
+  height: 270px;
+  margin: 35px auto;
+  padding: 20px 0;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgb(238, 238, 238) 20%,
+          rgba(238, 238, 238, 1) 80%, rgba(255, 255, 255, 0) 100%) ;
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgb(238, 238, 238) 20%,
+          rgba(238, 238, 238, 1) 80%, rgba(255, 255, 255, 0) 100%) ;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgb(238, 238, 238) 20%,
+          rgba(238, 238, 238, 1) 80%, rgba(255, 255, 255, 0) 100%) ;
+
+}
+
+.inner {
+  height: 250px;
+  width: 630px;
+  margin: auto;
+}
+
+.result-container div div {
+  display: inline-block;
+  width: 200px;
+}
+
+.result-container div div div {
+  text-align: center;
+  font: 60px bold Arial;
+  background-color: #d7d7d7;
+  height: 135px;
+  padding-top: 60px;
+  border-radius: 110px;
+  box-shadow: 5px 5px 20px rgba(0,0,0,.5), inset 5px 5px 20px 5px white, inset -5px -5px 10px rgba(0,0,0,.4);
+}
+
+h3 {
+  font-weight: normal ;
+  margin-bottom: 0;
+}
+
+div.birthday_field h3.birthday_data_text {
+  text-align: center;
+  margin: 0;
+  margin-bottom: -10px;
+
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+input.random_data_check, h3.random_data_text {
+  display: inline-block;
+}
+
+input.random_data_check:checked + br + br+ div.inner-shadow2 {
+  display: block;
+}
+
+h3.random_data_text {
+
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 0;
+  margin-right: -340px;
+}
+

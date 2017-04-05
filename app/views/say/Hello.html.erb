@@ -1,2 +1,139 @@
-<h1>Say#Hello</h1>
-<p>Find me in app/views/say/Hello.html.erb</p>
+<!--<pre>
+  <% params.each do |key,value| %>
+    <%= key + " => " + value %>
+<% end %>
+</pre>-->
+<div class="birthday_field">
+
+  <h3 class="birthday_data_text">ДАТА РОЖДЕНИЯ</h3></br>
+  <div class="inner-shadow">
+    <div class="inner-container">
+      <%= form_tag calc_path, :method => 'POST', :id => 'form' do %>
+          <%= "День: " %>
+          <%= select_tag :day, options_for_select( [['1',1],['2',2],['3',3],
+                                                    ['4',4],['5',5],['6',6],
+                                                    ['7',7],['8',8],['9',9],
+                                                    ['10',10],['11',11],['12',12],
+                                                    ['13',13],['14',14],['15',15],
+                                                    ['16',16],['17',17],['18',18],
+                                                    ['19',19],['20',20],['21',21],
+                                                    ['22',22],['23',23],['24',24],
+                                                    ['25',25],['26',26],['27',27],
+                                                    ['28',28],['29',29],['30',30],
+                                                    ['31',31]], @day) %>
+          <%= "Месяц: " %>
+          <%= select_tag :month, options_for_select( [['Январь',1],['Февраль',2],['Март',3],
+                                                      ['Апрель',4],['Май',5],['Июнь',6],
+                                                      ['Июль',7],['Август',8],['Сентябрь',9],
+                                                      ['Октябрь',10],['Ноябрь',11],['Декабрь',12]], @month) %>
+          <%= "Год: " %>
+          <%= select_tag :year, options_for_select(@years, @year) %>
+
+
+          <%= submit_tag "OK", :class => "button-ok" %>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="birthday_field">
+
+  <h3 class="random_data_text">ВОЗРАСТ НА ЗАДАННУЮ ДАТУ</h3>
+  <%= check_box_tag :check, "Check", @checked, :form => 'form', :class => 'random_data_check' %>
+
+  <br/>
+  <br/>
+  <div class="inner-shadow2">
+    <div class="inner-container">
+
+      <%= "День: " %>
+      <%= select_tag :dayr, options_for_select( [['1',1],['2',2],['3',3],
+                                                 ['4',4],['5',5],['6',6],
+                                                 ['7',7],['8',8],['9',9],
+                                                 ['10',10],['11',11],['12',12],
+                                                 ['13',13],['14',14],['15',15],
+                                                 ['16',16],['17',17],['18',18],
+                                                 ['19',19],['20',20],['21',21],
+                                                 ['22',22],['23',23],['24',24],
+                                                 ['25',25],['26',26],['27',27],
+                                                 ['28',28],['29',29],['30',30],
+                                                 ['31',31]], @dayr), :form => 'form' %>
+      <%= "Месяц: " %>
+      <%= select_tag :monthr, options_for_select( [['Январь',1],['Февраль',2],['Март',3],
+                                                   ['Апрель',4],['Май',5],['Июнь',6],
+                                                   ['Июль',7],['Август',8],['Сентябрь',9],
+                                                   ['Октябрь',10],['Ноябрь',11],['Декабрь',12]], @monthr), :form => 'form' %>
+      <%= "Год: " %>
+      <%= select_tag :yearr, raw(@years2), :form => 'form' %>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+<div class="result-container">
+  <div class="inner">
+    <% if @checked %>
+        <h2>ВОЗРАСТ НА ДАТУ
+          <b><%= @dayr +"."+ @monthr +"."+ @yearr %></b>
+        </h2>
+    <% else %>
+        <h2>ВОЗРАСТ</h2>
+    <% end %>
+    <div>
+      <div>
+        <%= @yearsold %>
+      </div>
+      <% if @yearsold != nil %>
+          <% if @yearsold%10 == 1 && @yearsold != 11 %>
+              <h3>ГОД</h3>
+          <% elsif (@yearsold%10 == 2 || @yearsold%10 == 3 || @yearsold%10 == 4) && @yearsold/10 != 1  %>
+              <h3>ГОДА</h3>
+          <% else %>
+              <h3>ЛЕТ</h3>
+          <% end %>
+      <% end %>
+      <h3>&nbsp;</h3>
+    </div>
+    <div>
+      <div>
+        <%= @monthold %>
+      </div>
+      <% if @monthold != nil %>
+          <% if @monthold%10 == 1 && @monthold != 11 %>
+              <h3>МЕСЯЦ</h3>
+          <% elsif (@monthold%10 == 2 || @monthold%10 == 3 || @monthold%10 == 4) && @monthold/10 != 1 %>
+              <h3>МЕСЯЦА</h3>
+          <% else %>
+              <h3>МЕСЯЦЕВ</h3>
+          <% end %>
+      <% end %>
+      <h3>&nbsp;</h3>
+    </div>
+    <div>
+      <div>
+        <%= @daysold %>
+      </div>
+      <% if @daysold != nil %>
+          <% if @daysold%10 == 1 && @daysold != 11 %>
+              <h3>ДЕНЬ</h3>
+          <% elsif (@daysold%10 == 2 || @daysold%10 == 3 || @daysold%10 == 4) && @daysold/10 != 1 %>
+              <h3>ДНЯ</h3>
+          <% else %>
+              <h3>ДНЕЙ</h3>
+          <% end %>
+      <% end %>
+      <h3>&nbsp;</h3>
+    </div>
+  </div>
+</div>
+<div class="back-block">
+  <%= button_to "НАЗАД", root_path, :class => "button-back", :method => :get %>
+</div>
+
+
