@@ -1,13 +1,6 @@
 class SayController < ApplicationController
   def Hello
-    @time=Time.now
-  end
 
-  def photo1
-
-  end
-
-  def calc
     @time=Time.now
     @day = params['day']
     @month = params['month']

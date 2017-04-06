@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'say/Hello'
 
+  match 'calc' => 'say#Hello', :via => [:post,:get]
+
   root 'say#Hello'
 
   # The priority is based upon order of creation: first created -> highest priority.
